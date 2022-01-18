@@ -7,7 +7,9 @@ from opentelemetry.sdk.metrics import MeterProvider
 
 import time
 
-def handler(event, context):
+# def handler(event, context):
+if __name__ == '__main__':
+
     # configure the Logz.io listener endpoint and Prometheus metrics account token
     exporter = PrometheusRemoteWriteMetricsExporter(
         endpoint=os.environ['LISTENER_URL'] ,
@@ -35,7 +37,6 @@ def handler(event, context):
         "service.name": "service123",
         "service.version": "1.2.3"
     }
-    time.sleep(5)
     counter.add(25, labels)
     metrics.get_meter_provider().shutdown()
 
