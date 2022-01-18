@@ -31,7 +31,6 @@ def handler(event, context):
         "service.name": "service123",
         "service.version": "1.2.3"
     }
-    time.sleep(5)
     counter.add(25, labels)
     metrics.get_meter_provider().shutdown()
 ```
