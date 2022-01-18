@@ -49,7 +49,6 @@ docker build . --tag python-lambda-metrics-demo:latest
 ```shell
 aws ecr get-login-password --region <<region>> | docker login --username AWS --password-stdin <<aws_account_id>>.dkr.ecr.<<region>>.amazonaws.com
 ```
-* If your image repository doesn't exist in the ecr you intend to push to yet, create it.
 * Identify the local image to push.
 ```shell
 docker images
